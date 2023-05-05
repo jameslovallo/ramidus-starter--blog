@@ -44,7 +44,7 @@ function buildHTML(startPath, filter) {
   for (var i = 0; i < files.length; i++) {
     var filename = path.join(startPath, files[i])
     var stat = fs.lstatSync(filename)
-    if (stat.isDirectory()) {
+    if (stat.isDirectory() && filename !== 'dist/admin') {
       buildHTML(filename, filter) //recurse
     } else if (filename.endsWith(filter)) {
       let file = getFile(filename)
