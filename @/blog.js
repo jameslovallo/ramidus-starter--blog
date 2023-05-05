@@ -57,7 +57,8 @@ posts.forEach((post) => {
     const grayMatter = matter(text)
     const content = parse(grayMatter.content)
     const postPath = '/blog/' + post.replace('.md', '').toLowerCase()
-    const distPath = './dist/' + postPath
+    console.log(postPath)
+    const distPath = './dist' + postPath
     const distName = distPath + '/index.html'
     fs.mkdirSync(distPath)
     fs.writeFileSync(
@@ -72,9 +73,13 @@ posts.forEach((post) => {
 })
 
 fs.writeFileSync(
+  './@/posts/index.js',
+  'export default ' + JSON.stringify(blogIndex),
+  { encoding: 'utf8' }
+)
+
+fs.writeFileSync(
   './dist/@/posts/index.js',
   'export default ' + JSON.stringify(blogIndex),
-  {
-    encoding: 'utf8',
-  }
+  { encoding: 'utf8' }
 )

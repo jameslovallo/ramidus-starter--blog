@@ -15,6 +15,9 @@ ardi({
     link.addEventListener('click', (e) => this.click(e))
   },
   fetchPage(href, setPage) {
+    if (['127.0.0.1', 'localhost'].includes(location.hostname)) {
+      if (href.startsWith('/blog')) href = '/dist' + href
+    }
     fetch((href !== '/' ? href : '') + '/index.html')
       .then((res) => res.text())
       .then((page) => {

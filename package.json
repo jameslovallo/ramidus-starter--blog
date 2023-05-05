@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "tinacms build && node @/build.js && node @/blog.js",
+    "corebuild": "node @/build.js && node @/blog.js",
     "dev": "tinacms dev -c 'npx browser-sync --files \"**/*\"'"
   }
 }
