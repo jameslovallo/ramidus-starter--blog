@@ -1,0 +1,93 @@
+:root {
+  --theme-color: #ec4815;
+  --border: rgba(125, 125, 125, 0.4);
+  --surface: rgba(125, 125, 125, 0.1);
+  --surface-heavy: rgba(125, 125, 125, 0.25);
+  color-scheme: dark;
+  font-family: sans-serif;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  color: #d3d3d3;
+  margin: 0;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration-color: var(--theme-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  scroll-margin-top: 3rem;
+}
+
+h2 {
+  border-bottom: 1px solid var(--border);
+  line-height: 1;
+  margin-bottom: 1rem;
+  margin-top: 2em;
+  padding-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 2em;
+}
+
+ul,
+ol {
+  line-height: 2em;
+  padding-inline-start: 1rem;
+}
+
+.tree ul {
+  font-size: 14px;
+  list-style: none;
+}
+
+.tree ul ul {
+  padding-inline-start: 0.75rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--border);
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.5rem;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  font-size: 13px;
+  line-height: 2;
+}
+
+code:not([class^='language']) {
+  border: 1px solid var(--border);
+  font-size: 14px;
+  padding: 2px 2px;
+}
