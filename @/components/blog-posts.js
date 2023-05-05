@@ -40,9 +40,9 @@ ardi({
                     <img src=${post.heroImg} />
                     <div>
                       <div part="title">${post.title}</div>
-                      <small part="date"
-                        >${new Date(post.date).toLocaleDateString()}</small
-                      >
+                      <small part="date">
+                        Published ${new Date(post.date).toLocaleDateString()}
+                      </small>
                     </div>
                   </a>
                 </app-link>
