@@ -14,8 +14,8 @@
     "tinacms": "^1.5.4"
   },
   "scripts": {
-    "build": "tinacms build && node @/build.js && node @/blog.js",
+    "build": "tinacms build && npm run corebuild",
     "corebuild": "node @/build.js && node @/blog.js",
-    "dev": "tinacms dev -c 'npx browser-sync --files \"**/*\"'"
+    "dev": "tinacms dev -c 'npx browser-sync --files \"**/*\" & chokidar \"@/posts/**/*.md\" -c \"npm run corebuild\"'"
   }
 }
