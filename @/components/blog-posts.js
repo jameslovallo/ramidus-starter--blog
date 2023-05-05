@@ -1,9 +1,10 @@
 import posts from '../posts/index.js'
-import ardi, { css, html, svg } from '//unpkg.com/ardi'
+import ardi, { css, html, svg } from '//unpkg.com/ardi@0.3.1'
 
 ardi({
   tag: 'blog-posts',
   props: {
+    hidepagination: [Boolean, false],
     nextpagelabel: [String, 'Next Page'],
     pagelabel: [String, 'Page'],
     pagesize: [Number, 10],
@@ -50,25 +51,27 @@ ardi({
             `
           )}
       </ul>
-      <div part="pagination">
-        <button
-          part="pagination-prev"
-          @click=${() => this.page--}
-          disabled=${this.page > 0 ? null : true}
-          aria-label=${this.prevpagelabel}
-        >
-          ${this.icon('leftArrow')}
-        </button>
-        ${this.pagelabel} ${this.page + 1} / ${lastPage}
-        <button
-          part="pagination-next"
-          @click=${() => this.page++}
-          disabled=${this.page + 1 < lastPage ? null : true}
-          aria-label=${this.nextpagelabel}
-        >
-          ${this.icon('rightArrow')}
-        </button>
-      </div>
+      <if-else if=${!this.hidepagination}>
+        <div part="pagination">
+          <button
+            part="pagination-prev"
+            @click=${() => this.page--}
+            disabled=${this.page > 0 ? null : true}
+            aria-label=${this.prevpagelabel}
+          >
+            ${this.icon('leftArrow')}
+          </button>
+          ${this.pagelabel} ${this.page + 1} / ${lastPage}
+          <button
+            part="pagination-next"
+            @click=${() => this.page++}
+            disabled=${this.page + 1 < lastPage ? null : true}
+            aria-label=${this.nextpagelabel}
+          >
+            ${this.icon('rightArrow')}
+          </button>
+        </div>
+      </if-else>
     `
   },
   styles: css`
