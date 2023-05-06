@@ -52,12 +52,6 @@ export default defineConfig({
             },
           },
         ],
-        defaultItem: () => {
-          return {
-            title: 'My New Post',
-            date: Date.now(),
-          }
-        },
       },
     ],
   },
