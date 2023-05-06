@@ -1,8 +1,12 @@
-<img src="https://avatars.githubusercontent.com/u/54718400?s=200&v=4" alt="The Tina CMS logo, a red llama on a white background." style="width: 100px">
+<img src="https://avatars.githubusercontent.com/u/54718400?s=200&v=4" alt="The Tina CMS logo, a red llama on a white background." style="width: 80px">
 
 # Ramidus Blog Starter
 
 This template is built with [Ramidus](https://ardi.netlify.app/ramidus) and is configured to work with [Tina CMS](https://tina.io).
+
+```sh
+npx ramidus@latest --starter blog
+```
 
 ## Configuration
 
