@@ -5,6 +5,7 @@ const components = [
   'app-layout',
   'app-nav',
   'app-footer',
+  'blog-posts',
   'mark-down',
   'tree-icon',
 ]
